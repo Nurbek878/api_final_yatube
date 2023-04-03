@@ -1,4 +1,3 @@
-from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404
 from rest_framework import filters, permissions, viewsets, mixins
 from rest_framework.pagination import LimitOffsetPagination
@@ -6,9 +5,7 @@ from rest_framework.pagination import LimitOffsetPagination
 from api.permissions import AuthorOrReadOnly
 from api.serializers import (CommentSerializer, FollowSerializer,
                              GroupSerializer, PostSerializer)
-from posts.models import Group, Post, User
-
-User = get_user_model()
+from posts.models import Group, Post
 
 
 class PostViewSet(viewsets.ModelViewSet):
